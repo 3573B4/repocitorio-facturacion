@@ -23,6 +23,7 @@
 			<input type="text" name="suario" placeholder="Usuario">
 			<input type="password" name="clave" placeholder="Contraseña">
 			<input type="submit" value="INGRESAR">
+			<input>
 		</form>
 	</section>
 
