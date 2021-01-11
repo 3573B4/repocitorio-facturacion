@@ -6,6 +6,7 @@
     <title>git VSCode</title>
 </head>
 <body>
-    
+    <input name="Username" type="text">
+    <input name="Passwor"type="text">
 </body>
 </html>
