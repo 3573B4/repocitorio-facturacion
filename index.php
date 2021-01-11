@@ -8,6 +8,6 @@
 <body>
     <input name="Username" type="text">
     <input name="Passwor"type="text">
-    <input>
+    <input type="sumbit">
 </body>
 </html>
