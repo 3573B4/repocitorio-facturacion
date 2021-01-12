@@ -24,21 +24,20 @@
         <nav class="my-2 my-md-0 mr-md-3">
             <a class="p-2 text-dark">Registrarme</a>
         </nav>
-        <a class="btn btn-primary text-white" data-toggle="modal" data-target="#myModal">Iniciar Sesión</a>
-        <button type="button" class="btn btn-info btn-round" data-toggle="modal" data-target="#loginModal">
+        <a class="btn btn-primary text-white" data-toggle="modal" data-target="#loginModal">Iniciar Sesión</a>
     </div>
 
     <!-- IMAGEN -->
 	<header class="main-header">
 		<div class="background-overlay text-white p-5">
 			<div class="container">
-				<div class="row">
+				<div class="row justify-content-center">
 					<div class="text-center justify-content-center align-self-center p-5">
 						<h1 class="p-2 m-5 text-primary">Playeras</h1>
-						<h3>Lorem ipsum</h3>
-						<p class="p-3">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consectetur temporibus sed vero tempore reiciendis assumenda voluptatibus blanditiis id quos magni animi, doloremque optio qui delectus, suscipit alias eius inventore deserunt. </p>
-						<a href="login.html" class="btn btn-primary btn-lg text-white m-3">
-							Comenzar
+						<h3>Playeras personalizadas</h3>
+						<p class="p-3">Encuentra las playeras de tu elección y escoge el estampado que te guste. </p>
+						<a class="btn btn-primary btn-lg text-white m-3" data-toggle="modal" data-target="#loginModal">
+							Comprar
 						</a>
 					</div>
 				</div>
@@ -46,69 +45,35 @@
 		</div>
 	</header>
 
-    <!-- Modal -->
-    <div id="myModal" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Modal Header</h4>
-                </div>
-                <div class="modal-body">
-                    <p>Some text in the modal.</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
     <!-- modal iniciar sesion-->
     <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-            <div class="modal-header border-bottom-0">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="form-title text-center">
-                <h4>Login</h4>
-                </div>
-                <div class="d-flex flex-column text-center">
-                <form>
-                    <div class="form-group">
-                    <input type="email" class="form-control" id="email1"placeholder="Your email address...">
-                    </div>
-                    <div class="form-group">
-                    <input type="password" class="form-control" id="password1" placeholder="Your password...">
-                    </div>
-                    <button type="button" class="btn btn-info btn-block btn-round">Login</button>
-                </form>
-                
-                <div class="text-center text-muted delimiter">or use a social network</div>
-                <div class="d-flex justify-content-center social-buttons">
-                    <button type="button" class="btn btn-secondary btn-round" data-toggle="tooltip" data-placement="top" title="Twitter">
-                    <i class="fab fa-twitter"></i>
-                    </button>
-                    <button type="button" class="btn btn-secondary btn-round" data-toggle="tooltip" data-placement="top" title="Facebook">
-                    <i class="fab fa-facebook"></i>
-                    </button>
-                    <button type="button" class="btn btn-secondary btn-round" data-toggle="tooltip" data-placement="top" title="Linkedin">
-                    <i class="fab fa-linkedin"></i>
-                    </button>
-                </di>
-                </div>
-            </div>
-            </div>
-            <div class="modal-footer d-flex justify-content-center">
-                <div class="signup-section">Not a member yet? <a href="#a" class="text-info"> Sign Up</a>.</div>
-            </div>
+            <div class="modal-content px-4">
+				<div class="modal-header border-bottom-0">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body px-4">
+					<div class="form-title text-center pb-4">
+						<h4>Login</h4>
+					</div>
+					<div class="d-flex flex-column text-center">
+						<form method="post" target="_blank" action="php/login.php">
+							<div class="form-group pb-3">
+								<input type="text" name="suario" class="form-control" id="email1" placeholder="Ingresa tu usuario">
+							</div>
+							<div class="form-group pb-3">
+								<input type="password" name="clave" class="form-control" id="password1" placeholder="Ingresa tu contraseña">
+							</div>
+							<button type="button" class="btn btn-primary btn-block btn-round">Login</button>
+						</form>
+					</div>
+				</div>
+            	<div class="modal-footer d-flex justify-content-center">
+                	<div class="signup-section">No tengo cuenta, quiero <a href="#" class="text-primary"> registrarme</a>.</div>
+            	</div>
+			</div>	
         </div>
     </div>
 
@@ -121,11 +86,8 @@
 			<input type="submit" value="INGRESAR">
 		</form>
 	</section>
-    <!-- javascrip 
-    <script src="js/modal-iniciar-sesion.js"></script>
-    <script src="js/bootstrap.js"></script>
-    <script src="js/jquery.js"></script>-->
-    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <!-- javascript -->
+	<script src="https://code.jquery.com/jquery-latest.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 </body>
