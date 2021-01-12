@@ -13,8 +13,9 @@
 <html>
 <head>
 	<title>Login - Facturacion</title>
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
 </head>
-<body>
+<body class="bg-light">
 
 	<section id="container">
 		<form action="" method="post">
