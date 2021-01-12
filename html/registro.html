@@ -10,11 +10,9 @@
     <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 bg-white border-bottom shadow-sm"> 
         <img class="d-block mr-3" src="../img/logo-playeras.jpeg" width="40" height="40">
         <h5 class="mg-0 mr-md-auto font-weight-bold">Playeras</h5>
-        <nav class="my-2 my-md-0 mr-md-3">
-            <a class="p-2 text-dark">Registrarme</a>
-        </nav>
-        <a class="btn btn-primary text-white" data-toggle="modal" data-target="#myModal">Iniciar Sesión</a>
+        <a href="login.php" class="btn btn-primary text-white" data-toggle="modal" data-target="#myModal">Regresar</a>
     </div>
+    
     <div class="container">
         <div class="row justify-content-center pt-5">
             <div class="col col-lg-6 col-sm-10">
@@ -24,28 +22,69 @@
                 <form>
                     <div class="form-group">
                         <label for="nombre">Nombre Completo</label>
-                        <input type="text" class="form-control" id="nombre" aria-describedby="emailHelp" placeholder="Ingrese su nombre completo">
-                        </div>
-                    <div class="form-group">
-                        <label for="usuario">Usuario</label>
-                        <input type="password" class="form-control" id="usuario" placeholder="Password">
+                        <input type="text" class="form-control" id="nombre" aria-describedby="emailHelp" placeholder="Ingrese su nombre completo" required>
                     </div>
                     <div class="form-group">
                         <label for="correo">Correo electronico</label>
-                        <input type="email" class="form-control" id="correo" aria-describedby="emailHelp" placeholder="Ingrse su usuario">
+                        <input type="email" class="form-control" id="correo" aria-describedby="emailHelp" placeholder="correo@ejemplo.com">
+                        <div class="invalid-feedback">
+                            Ingresa un correo válido.
+                        </div>
                     </div>
                     <div class="form-group">
                         <label for="clave">Contraseña</label>
-                        <input type="password" class="form-control" id="clave" placeholder="contraseña">
+                        <input type="password" class="form-control" id="clave" placeholder="Mínimo 8 caracteres" required>
                     </div>
                     <div class="form-group">
                         <label for="confirmar-password">Confirmar Contraseña</label>
-                        <input type="password" class="form-control" id="confirmar-password" placeholder="confirmar contraseña">
+                        <input type="password" class="form-control" id="confirmar-password" placeholder="confirmar contraseña" required>
+                        <div class="invalid-feedback">
+                            Las contraseñas no coinciden.
+                        </div>
                     </div>
                     <button type="submit" class="btn btn-primary btn-block">Registrar</button>
                 </form>
+                <div class="py-3">
+                    <div class="signup-section">Ya tengo una cuenta, quiero <a class="text-primary" data-toggle="modal" data-target="#loginModal"> Iniciar sesión</a>.</div>
+                </div>
             </div>
         </div>
     </div>
+
+    <!-- modal iniciar sesion-->
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content px-4">
+				<div class="modal-header border-bottom-0">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body px-4">
+					<div class="form-title text-center pb-4">
+						<h4>Login</h4>
+					</div>
+					<div class="d-flex flex-column text-center">
+						<form method="post" target="_blank" action="php/login.php">
+							<div class="form-group pb-3">
+								<input type="text" name="suario" class="form-control" id="email1" placeholder="Ingresa tu usuario">
+							</div>
+							<div class="form-group pb-3">
+								<input type="password" name="clave" class="form-control" id="password1" placeholder="Ingresa tu contraseña">
+							</div>
+							<button type="button" class="btn btn-primary btn-block btn-round">Login</button>
+						</form>
+					</div>
+				</div>
+            	<div class="modal-footer d-flex justify-content-center">
+                	<div class="signup-section">No tengo cuenta, quiero <a href="html/registro.html" class="text-primary"> registrarme</a>.</div>
+            	</div>
+			</div>	
+        </div>
+    </div>
+
+     <!-- javascript -->
+	<script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>
