@@ -1,14 +1,3 @@
-<?php  
-	$alert = '';
-	if (!empty($_POST)) {
-		if (empty($_POST['usuario' || empty($_POST['clave'])])) {
-			echo $alert="ingrese los campos";
-		}else{
-			
-		}
-	}
-?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,7 +11,7 @@
         <img class="d-block mr-3" src="img/logo-playeras.jpeg" width="40" height="40">
         <h5 class="mg-0 mr-md-auto font-weight-bold">Playeras</h5>
         <nav class="my-2 my-md-0 mr-md-3">
-            <a class="p-2 text-dark">Registrarme</a>
+            <a href="html/registro.html" class="p-2 text-dark">Registrarme</a>
         </nav>
         <a class="btn btn-primary text-white" data-toggle="modal" data-target="#loginModal">Iniciar Sesión</a>
     </div>
@@ -71,7 +60,7 @@
 					</div>
 				</div>
             	<div class="modal-footer d-flex justify-content-center">
-                	<div class="signup-section">No tengo cuenta, quiero <a href="#" class="text-primary"> registrarme</a>.</div>
+                	<div class="signup-section">No tengo cuenta, quiero <a href="html/registro.html" class="text-primary"> registrarme</a>.</div>
             	</div>
 			</div>	
         </div>
