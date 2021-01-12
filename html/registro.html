@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+</head>
+<body>
+    <!-- header -->
+    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 bg-white border-bottom shadow-sm"> 
+        <img class="d-block mr-3" src="../img/logo-playeras.jpeg" width="40" height="40">
+        <h5 class="mg-0 mr-md-auto font-weight-bold">Playeras</h5>
+        <nav class="my-2 my-md-0 mr-md-3">
+            <a class="p-2 text-dark">Registrarme</a>
+        </nav>
+        <a class="btn btn-primary text-white" data-toggle="modal" data-target="#myModal">Iniciar Sesión</a>
+    </div>
+    <div class="container">
+        <div class="row justify-content-center pt-5">
+            <div class="col col-lg-6 col-sm-10">
+                <div class="form-title text-center">
+                    <h4>Registrarse</h4>
+                </div>
+                <form>
+                    <div class="form-group">
+                        <label for="nombre">Nombre Completo</label>
+                        <input type="text" class="form-control" id="nombre" aria-describedby="emailHelp" placeholder="Ingrese su nombre completo">
+                        </div>
+                    <div class="form-group">
+                        <label for="usuario">Usuario</label>
+                        <input type="password" class="form-control" id="usuario" placeholder="Password">
+                    </div>
+                    <div class="form-group">
+                        <label for="correo">Correo electronico</label>
+                        <input type="email" class="form-control" id="correo" aria-describedby="emailHelp" placeholder="Ingrse su usuario">
+                    </div>
+                    <div class="form-group">
+                        <label for="clave">Contraseña</label>
+                        <input type="password" class="form-control" id="clave" placeholder="contraseña">
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmar-password">Confirmar Contraseña</label>
+                        <input type="password" class="form-control" id="confirmar-password" placeholder="confirmar contraseña">
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Registrar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
