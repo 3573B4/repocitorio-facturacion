@@ -32,7 +32,7 @@
             } else {
                 print_r("Datos incorrectos");
                 $alert = 'El usuario o la clave son incorrectos';
-                //session_destroy();
+                
             }
 		}
 	}
