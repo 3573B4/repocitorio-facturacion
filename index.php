@@ -48,14 +48,15 @@
 						<h4>Login</h4>
 					</div>
 					<div class="d-flex flex-column text-center">
-						<form method="post" target="_blank" action="php/login.php">
+						<form method="post" action="php/login.php">
 							<div class="form-group pb-3">
-								<input type="text" name="suario" class="form-control" id="email1" placeholder="Ingresa tu usuario">
+								<input type="text" name="usuario" class="form-control" id="email1" placeholder="Ingresa tu usuario">
 							</div>
 							<div class="form-group pb-3">
 								<input type="password" name="clave" class="form-control" id="password1" placeholder="Ingresa tu contraseña">
 							</div>
-							<button type="button" class="btn btn-primary btn-block btn-round">Login</button>
+							<div class="alert"><?php echo isset($alert)? $alert : ''; ?></div>
+							<button type="submit" class="btn btn-primary btn-block btn-round">Login</button>
 						</form>
 					</div>
 				</div>
@@ -66,7 +67,7 @@
         </div>
     </div>
 
-	<section id="container">
+	<!--<section id="container">
 		<form action="" method="post">
 			<h3>Iniciar Secion</h3>
 			<img src="">
@@ -74,7 +75,7 @@
 			<input type="password" name="clave" placeholder="Contraseña">
 			<input type="submit" value="INGRESAR">
 		</form>
-	</section>
+	</section>-->
     <!-- javascript -->
 	<script src="https://code.jquery.com/jquery-latest.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
