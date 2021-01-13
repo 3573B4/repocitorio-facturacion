@@ -47,9 +47,9 @@
 <body class="bg-light">
     <!-- header -->
     <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 bg-white border-bottom shadow-sm"> 
-        <img class="d-block mr-3" src="../img/logo-playeras.jpeg" width="40" height="40">
+        <img class="d-block mr-3" src="../img/logo-playeras.png" width="40" height="40">
         <h5 class="mg-0 mr-md-auto font-weight-bold">Playeras</h5>
-        <a href="../index.php" class="btn btn-primary text-white">Regresar</a>
+        <a href="../index.php" class="btn btn-primary text-white">Volver al inicio</a>
     </div>
     
     <div class="container">

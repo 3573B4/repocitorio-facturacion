@@ -8,9 +8,9 @@
 <body class="bg-light">
     <!-- header -->
     <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 bg-white border-bottom shadow-sm"> 
-        <img class="d-block mr-3" src="../img/logo-playeras.jpeg" width="40" height="40">
+        <img class="d-block mr-3" src="../img/logo-playeras.png" width="40" height="40">
         <h5 class="mg-0 mr-md-auto font-weight-bold">Playeras</h5>
-        <a href="../index.php" class="btn btn-primary text-white">Regresar</a>
+        <a href="../index.php" class="btn btn-primary text-white">Volver al inicio</a>
     </div>
     
     <div class="container">
@@ -29,17 +29,21 @@
                             </div>
                             <div class="form-group">
                                 <label for="correo">Correo electronico</label>
-                                <input type="email" class="form-control" id="correo" aria-describedby="emailHelp" placeholder="correo@ejemplo.com">
+                                <input type="email" class="form-control" id="correo" aria-describedby="emailHelp" placeholder="correo@ejemplo.com" required>
                                 <div class="invalid-feedback">
                                     Ingresa un correo válido.
                                 </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="nombre">Usuario</label>
+                                <input type="text" class="form-control" id="usuario" aria-describedby="usuario" placeholder="Crea tu usuario para acceder" required>
                             </div>
                             <div class="form-group">
                                 <label for="clave">Contraseña</label>
                                 <input type="password" class="form-control" id="clave" placeholder="Mínimo 8 caracteres" required>
                             </div>
                             <div class="form-group">
-                                <label for="confirmar-password">Confirmar Contraseña</label>
+                                <label for="confirmar-password">Confirmar contraseña</label>
                                 <input type="password" class="form-control" id="confirmar-password" placeholder="confirmar contraseña" required>
                                 <div class="invalid-feedback">
                                     Las contraseñas no coinciden.
