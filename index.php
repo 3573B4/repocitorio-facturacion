@@ -55,11 +55,12 @@
 							<div class="form-group pb-3">
 								<input type="password" name="clave" class="form-control" id="password1" placeholder="Ingresa tu contraseña">
 							</div>
-							<button type="button" class="btn btn-primary btn-block btn-round">Login</button>
+							<button type="submit" class="btn btn-primary btn-block btn-round">Login</button>
 						</form>
 					</div>
 				</div>
             	<div class="modal-footer d-flex justify-content-center">
+                    <div class="alert"><?php echo isset($alert) ? $alert : ''; ?></div>
                 	<div class="signup-section">No tengo cuenta, quiero <a href="html/registro.html" class="text-primary"> registrarme</a>.</div>
             	</div>
 			</div>	
