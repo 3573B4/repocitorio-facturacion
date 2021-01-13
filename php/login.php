@@ -18,6 +18,8 @@
 
             if($result > 0){
                 $data = mysqli_fetch_array($query);
+                print_r($data);
+                print_r($result);
                 session_start();
                 $_SESSION['active'] = true;
                 $_SESSION['idUser'] = $data['idusuario'];
@@ -26,8 +28,9 @@
                 $_SESSION['user'] = $data['usuario'];
                 $_SESSION['rol'] = $data['rol'];
 
-                header('location: html/');
+                header('location: ../html/'); 
             } else {
+                print_r("Datos incorrectos");
                 $alert = 'El usuario o la clave son incorrectos';
                 //session_destroy();
             }

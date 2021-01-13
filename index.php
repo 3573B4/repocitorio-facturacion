@@ -55,10 +55,7 @@
 							<div class="form-group pb-3">
 								<input type="password" name="clave" class="form-control" id="password1" placeholder="Ingresa tu contraseña">
 							</div>
-<<<<<<< HEAD
-							<div class="alert"><?php echo isset($alert)? $alert : ''; ?></div>
-=======
->>>>>>> a2cad4dae3e2538507d81e59b946af2ee59db15b
+							<!--<div class="alert"><//?php echo isset($alert)? $alert : ''; ?></div>-->
 							<button type="submit" class="btn btn-primary btn-block btn-round">Login</button>
 						</form>
 					</div>
@@ -66,7 +63,7 @@
             	<div class="modal-footer d-flex justify-content-center">
                     <div class="alert"><?php echo isset($alert) ? $alert : ''; ?></div>
                 	<div class="signup-section">No tengo cuenta, quiero <a href="html/registro.html" class="text-primary"> registrarme</a>.</div>
-            	</div>
+            	</div> 
 			</div>	
         </div>
     </div>
