@@ -12,7 +12,7 @@
             $user = $_POST['usuario'];
 			$pass = $_POST['clave'];
 			
-            //echo "Hola ".$user."<br/>Hemos recibido tu contraseña:<br/>".$pass;
+            
             $query = mysqli_query($connection, "SELECT * FROM usuario WHERE usuario= '$user' AND clave = '$pass'");
             $result = mysqli_num_rows($query);
 
