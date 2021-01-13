@@ -14,7 +14,6 @@
 
 			if ($result>0) {
 				$data = mysqli_fetch_array($query);
-				#print_r($data);
 				session_start();
 				$_SESSION['active'] = true;
 				$_SESSION['idUser'] = $data['idusuario'];
