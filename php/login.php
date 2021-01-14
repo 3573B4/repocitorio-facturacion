@@ -1,40 +1,45 @@
 <?php  
 
     $alert = '';
-	if (!empty($_POST)) {
+    session_start();
+    if (!empty($_SESSION['active'])) {
+        header('location: ../html/');
+    }else {
         
-        if (empty($_POST['usuario']) || empty($_POST['clave'])) {
-			$alert = "ingrese su usuario y contraseña.";
-		}else{
-            require_once "conexion.php";
+        if (!empty($_POST)) {
             
-            $user = $_POST['usuario'];
-			$pass = $_POST['clave'];
-			
-            
-            $query = mysqli_query($connection, "SELECT * FROM usuario WHERE usuario= '$user' AND clave = '$pass'");
-            $result = mysqli_num_rows($query);
+            if (empty($_POST['usuario']) || empty($_POST['clave'])) {
+                $alert = "ingrese su usuario y contraseña.";
+            }else{
+                require_once "conexion.php";
+                
+                $user = $_POST['usuario'];
+                $pass = $_POST['clave'];
+                
+                
+                $query = mysqli_query($connection, "SELECT * FROM usuario WHERE usuario= '$user' AND clave = '$pass'");
+                $result = mysqli_num_rows($query);
 
-            if($result > 0){
-                $data = mysqli_fetch_array($query);
-                print_r($data);
-                print_r($result);
-                session_start();
-                $_SESSION['active'] = true;
-                $_SESSION['idUser'] = $data['idusuario'];
-                $_SESSION['nombre'] = $data['nombre'];
-                $_SESSION['email'] = $data['email'];
-                $_SESSION['user'] = $data['usuario'];
-                $_SESSION['rol'] = $data['rol'];
+                if($result > 0){
+                    $data = mysqli_fetch_array($query);
+                    print_r($data);
+                    print_r($result);
+                    
+                    $_SESSION['active'] = true;
+                    $_SESSION['idUser'] = $data['idusuario'];
+                    $_SESSION['nombre'] = $data['nombre'];
+                    $_SESSION['email'] = $data['email'];
+                    $_SESSION['user'] = $data['usuario'];
+                    $_SESSION['rol'] = $data['rol'];
 
-                header('location: ../html/'); 
-            } else {
-                $alert = 'El usuario o la contraseña son incorrectos.';
-                 
+                    header('location: ../html/'); 
+                } else {
+                    $alert = 'El usuario o la contraseña son incorrectos.';
+                    session_destroy();
+                }
             }
-		}
+        }
     }
-    
 ?>
 
 <!DOCTYPE html>
