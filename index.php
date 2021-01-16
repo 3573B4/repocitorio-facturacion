@@ -11,7 +11,7 @@
         <img class="d-block mr-3" src="img/logo-playeras.png" width="40" height="40">
         <h5 class="mg-0 mr-md-auto font-weight-bold">Playeras</h5>
         <nav class="my-2 my-md-0 mr-md-3">
-            <a href="html/registro.html" class="p-2 text-dark">Registrarme</a>
+            <a href="html/registro.php" class="p-2 text-dark">Registrarme</a>
         </nav>
         <a class="btn btn-primary text-white" href="php/login.php">Iniciar Sesión</a>
     </div>
