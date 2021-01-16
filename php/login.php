@@ -83,7 +83,7 @@
                         </div>
                     </div>
                     <div class="modal-footer d-flex justify-content-start">
-                        <div class="signup-section">No tengo cuenta, quiero <a href="../html/registro.html" class="text-primary"> registrarme</a>.</div>
+                        <div class="signup-section">No tengo cuenta, quiero <a href="../html/registro.php" class="text-primary"> registrarme</a>.</div>
                     </div>
                 </div>	
             </div>
