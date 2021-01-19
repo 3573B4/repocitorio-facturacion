@@ -84,6 +84,7 @@
                             <h4>Registro</h4>
                         </div>
                         <form action="" method="POST">
+                            
                             <div class="form-group">
                                 <label for="nombre">Nombre Completo</label>
                                 <input type="text" class="form-control" name="nombre" id="nombre" aria-describedby="emailHelp" placeholder="Ingrese su nombre completo" required>
