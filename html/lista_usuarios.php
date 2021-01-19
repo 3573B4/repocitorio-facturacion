@@ -49,9 +49,13 @@
 
                 <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
 
-                <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 bg-white border-bottom shadow-sm"> 
-                    <h2 class="mg-0 mr-md-auto font-weight-bold">Lista de Usuarios</h2>
-                    <a href="crear_usuario.php" class="btn btn-sm btn-outline-secondary">Crear Usuario</a>
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"> 
+                    <h2 class="h2">Lista de Usuarios</h2>
+                    <div class="btn-toolbar mb-2 mb-md-0">
+                        <div class="btn-group me-2">
+                            <a href="crear_usuario.php" class="btn btn-sm btn-outline-secondary">Crear Usuario</a>
+                        </div>
+                    </div>
                 </div>
                 
                 <div class="table-responsive">
@@ -86,8 +90,8 @@
                                 <td><?php echo $data['rol']; ?></td>
                                 <td>
 
-                                    <a class="btn btn-primary text-white" type="botton" href="#">Editar</a>
-                                    <a class="btn btn-primary text-white" type="botton" href="#">Borrar</a>
+                                    <a class="btn btn-outline-dark btn-sm" type="botton" href="#">Editar</a>
+                                    <a class="btn btn-outline-danger btn-sm" type="botton" href="#">Eliminar</a>
                                 
                                 </td>
                             </tr>

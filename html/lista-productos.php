@@ -29,7 +29,7 @@
 
      <!--Estilos dashboard -->
      <link rel="stylesheet" type="text/css" href="../css/estilos-admin.css">
-</head>
+    </head>
     <body>
         <?php include "../includes/header.php";?>
 
@@ -60,18 +60,31 @@
                             </tr>
                         </thead>
                         <tbody>
+                            <?php 
+                                $query = mysqli_query($connection, "SELECT p.codproducto, p.descripcion, pr.proveedor, p.precio, p.existencia, p.foto FROM producto p INNER JOIN proveedor pr ON p.proveedor = pr.codproveedor");
+                                $result = mysqli_num_rows($query);
+
+                                if ($result > 0) {
+                                    while ($data = mysqli_fetch_array($query)) {
+                            ?>
                             <tr>
-                            <td>1,001</td>
-                            <td>Lorem</td>
-                            <td>ipsum</td>
-                            <td>dolor</td>
-                            <td>sit</td>
-                            <td>sit</td>
+                            <td><?php echo $data['codproducto']; ?></td>
+                            <td><?php echo $data['descripcion']; ?></td>
+                            <td><?php echo $data['proveedor']; ?></td>
+                            <td><?php echo $data['precio']; ?></td>
+                            <td><?php echo $data['existencia']; ?></td>
+                            <td><?php echo $data['foto']; ?></td>
                             <td>
                                 <a class="btn btn-outline-dark btn-sm" href="#">Editar</a>
                                 <a class="btn btn-outline-danger btn-sm" href="#">Eliminar</a>
                             </td>
                             </tr>
+                            <?php
+
+                                    }
+                                }
+                                
+                            ?>
                         </tbody>
                     </table>
                 </main>
