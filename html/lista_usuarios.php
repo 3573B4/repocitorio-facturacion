@@ -10,34 +10,8 @@
 <html lang="es">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Jekyll v3.8.5">
     <?php include "../includes/scripts.php";?>
-    <title>Catalogo</title>
-    
-
-
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
-      }
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-    </style>
-
-     <!--Estilos dashboard -->
-     <link rel="stylesheet" type="text/css" href="../css/estilos-admin.css">
-
+    <title>Lista de Usuarios</title>
 </head>
     <body>
     
@@ -57,7 +31,7 @@
                         </div>
                     </div>
                 </div>
-                
+                <!-- inicia la tabla de usuarios -->
                 <div class="table-responsive">
                     <table class="table table-striped table-sm">
                         <thead>
@@ -90,7 +64,7 @@
                                 <td><?php echo $data['rol']; ?></td>
                                 <td>
 
-                                    <a class="btn btn-outline-dark btn-sm" type="botton" href="#">Editar</a>
+                                    <a class="btn btn-outline-dark btn-sm" type="botton" href="editar_usuario.php?id=<?php echo $data['idusuario']; ?>">Editar</a>
                                     <a class="btn btn-outline-danger btn-sm" type="botton" href="#">Eliminar</a>
                                 
                                 </td>
