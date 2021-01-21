@@ -51,23 +51,7 @@
     <?php include "../includes/scripts.php";?>
     <title>Eliminar producto</title>
 
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
-      }
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-    </style>
-
-     <!--Estilos dashboard -->
+    <!--Estilos dashboard -->
      <link rel="stylesheet" type="text/css" href="../css/estilos-admin.css">
     </head>
     <body>
