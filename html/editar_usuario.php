@@ -26,7 +26,7 @@
 
                 $query = mysqli_query($connection, "SELECT * FROM usuario 
                                                     WHERE (usuario = '$user' AND idusuario != $idUsuario) 
-                                                    OR (correo = '$email' AND idisiario != $idUsuario) ");
+                                                    OR (correo = '$email' AND idusuario != $idUsuario) ");
                 $result = mysqli_fetch_array($query);
 
                 if($result > 0){
@@ -90,11 +90,11 @@
             $rol = $data['rol'];
 
             if ($idrol == 1) {
-                $option = '<option value="'.$idrol.'" select>'.$rol.'</option>';
+                $option = '<option value="'.$idrol.'" selected hidden>'.$rol.'</option>';
             }else if ($idrol == 2) {
-                $option = '<option value="'.$idrol.'" select>'.$rol.'</option>';
+                $option = '<option value="'.$idrol.'" selected hidden>'.$rol.'</option>';
             }else if ($idrol == 3) {
-                $option = '<option value="'.$idrol.'" select>'.$rol.'</option>';
+                $option = '<option value="'.$idrol.'" selected hidden>'.$rol.'</option>';
             }
         }
     }
