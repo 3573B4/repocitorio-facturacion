@@ -76,7 +76,7 @@
                             <td><?php echo $data['foto']; ?></td>
                             <td>
                                 <a class="btn btn-outline-dark btn-sm" href="editar-productos.php?id=<?php echo $data['codproducto']; ?>">Editar</a>
-                                <a class="btn btn-outline-danger btn-sm" href="#">Eliminar</a>
+                                <a class="btn btn-outline-danger btn-sm" href="eliminar-confirmar-productos.php?id=<?php echo $data['codproducto']; ?>">Eliminar</a>
                             </td>
                             </tr>
                             <?php
