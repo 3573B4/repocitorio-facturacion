@@ -8,13 +8,12 @@
 
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="utf-8">
-    <?php include "../includes/scripts.php";?>
-    <title>Lista de Usuarios</title>
-</head>
-    <body>
-    
+    <head>
+        <meta charset="utf-8">
+        <?php include "../includes/scripts.php";?>
+        <title>Lista de Usuarios</title>
+    </head>
+    <body>   
         <?php include "../includes/header.php";?>
 
         <div class="container-fluid">
@@ -37,9 +36,14 @@
                         <thead>
                             <tr>
                                 <th>Contador</th>
-                                <th>Nombre Completo</th>
+                                <th>Apellido Paterno</th>
+                                <th>Apellido Materno</th>
+                                <th>Nombres</th>
                                 <th>Correo Electronico</th>
                                 <th>Usuarios</th>
+                                <th>Sexo</th>
+                                <th>Edad</th>
+                                <th>Telefono</th>
                                 <th>Rol</th>
                                 <th>Acciones</th>
                             </tr>
@@ -49,7 +53,11 @@
 
                     <?php
                         
-                        $query = mysqli_query($connection, "SELECT u.idusuario, u.nombre, u.correo, u.usuario, r.rol FROM usuario u INNER JOIN rol r ON u.rol = r.idrol");
+                        $query = mysqli_query($connection, "SELECT u.idusuario, u.ape_pate, u.ape_mate, u.nombres, u.correo, u.usuario, u.sexo, u.edad, u.telefono, r.rol 
+                                                            FROM usuario u 
+                                                            INNER JOIN rol r 
+                                                            ON u.rol = r.idrol 
+                                                            WHERE estatus = 1");
                         $result = mysqli_num_rows($query);
 
                         if ($result > 0) {
@@ -58,15 +66,23 @@
                                     
                             <tr>
                                 <td><?php echo $data['idusuario']; ?></td>
-                                <td><?php echo $data['nombre']; ?></td>
+                                <td><?php echo $data['ape_pate']; ?></td>
+                                <td><?php echo $data['ape_mate']; ?></td>
+                                <td><?php echo $data['nombres']; ?></td>
                                 <td><?php echo $data['correo']; ?></td>
                                 <td><?php echo $data['usuario']; ?></td>
+                                <td><?php echo $data['sexo']; ?></td>
+                                <td><?php echo $data['edad']; ?></td>
+                                <td><?php echo $data['telefono']; ?></td>
                                 <td><?php echo $data['rol']; ?></td>
                                 <td>
 
                                     <a class="btn btn-outline-dark btn-sm" type="botton" href="editar_usuario.php?id=<?php echo $data['idusuario']; ?>">Editar</a>
-                                    <a class="btn btn-outline-danger btn-sm" type="botton" href="#">Eliminar</a>
-                                
+
+                                        <?php if ($data['idusuario'] != 1) { ?>
+
+                                    <a class="btn btn-outline-danger btn-sm" type="botton" href="eliminar_confirmar_usuario.php?id=<?php echo $data['idusuario']; ?>">Eliminar</a>
+                                        <?php } ?>
                                 </td>
                             </tr>
                     <?php
@@ -86,8 +102,5 @@
             </div>
         </div>
         <?php include "../includes/footer.php"; //para el pie de pagina ?>
-        <!--<script src="/docs/5.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>-->
-        <!--<script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script><script src="dashboard.js"></script>-->
-        
     </body>
 </html>

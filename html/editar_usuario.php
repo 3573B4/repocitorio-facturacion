@@ -5,7 +5,7 @@
     if(!empty($_POST)){
 
         $alert='';
-        if(empty($_POST['nombre']) || empty($_POST['correo']) || empty($_POST['user']) ){
+        if(empty($_POST['ape_pate']) || empty($_POST['ape_mate']) || empty($_POST['nombres']) || empty($_POST['correo']) || empty($_POST['user']) ){
 
             $alert='<div class="toast d-flex align-items-center text-white bg-danger border-0" role="alert" aria-live="assertive" aria-atomic="true">
                         <div class="toast-body">
@@ -18,10 +18,15 @@
             } else {
 
                 $idUsuario = $_POST['idUsuario'];
-                $nombre = $_POST['nombre'];
+                $ape_pate = $_POST['ape_pate'];
+                $ape_mate = $_POST['ape_mate'];
+                $nombres = $_POST['nombres'];
                 $email = $_POST['correo'];
                 $user = $_POST['user'];
                 $clave = $_POST['clave'];
+                $sexo = $_POST['sexo'];
+                $edad = $_POST['edad'];
+                $telefono = $_POST['telefono'];
                 $rol = $_POST['rol'];
 
                 $query = mysqli_query($connection, "SELECT * FROM usuario 
@@ -39,11 +44,11 @@
 
                     if (empty($_POST['clave'])) {
                         $sql_update = mysqli_query($connection, "UPDATE usuario
-                                                                    SET nombre='$nombre', correo='$email', usuario='$user', rol='$rol'
+                                                                    SET ape_pate='$ape_pate', ape_mate='$ape_mate', nombres='$nombres', correo='$email', usuario='$user', sexo='$sexo', edad='$edad', telefono='$telefono', rol='$rol'
                                                                     WHERE idusuario = $idUsuario");
                     } else {
                         $sql_update = mysqli_query($connection, "UPDATE usuario
-                                                                    SET nombre='$nombre', correo='$email', usuario='$user', clave='$clave', rol='$rol'
+                                                                    SET ape_pate='$ape_pate', ape_mate='$ape_mate', nombres='$nombres', correo='$email', usuario='$user', clave='$clave', sexo='$sexo', edad='$edad', telefono='$telefono', rol='$rol'
                                                                     WHERE idusuario = $idUsuario");
                     }
                     if($sql_update){
@@ -51,11 +56,11 @@
                         <div class="toast-body">
                             Usuario actualizado correctamente.
                         </div>
-                    </div><p clave="text-success">Usuario creado correctamente.</p>';
+                    </div><p clave="text-success">Usuario Actualizado correctamente.</p>';
                     } else {
                         $alert='<div class="toast d-flex align-items-center text-white bg-danger border-0" role="alert" aria-live="assertive" aria-atomic="true">
                         <div class="toast-body">
-                        Error al crear el usuario.
+                        Error al actualizar el usuario.
                         </div>
                     </div><p clave="text-danger">Error al actualizar el usuario.</p>';
                     }
@@ -71,11 +76,11 @@
     }
     $iduser = $_GET['id'];
 
-    $sql = mysqli_query($connection,"SELECT u.idusuario, u.nombre, u.correo, u.usuario, (u.rol) as idrol, (r.rol) as rol
-        FROM usuario u
-        INNER JOIN rol r
-        on u.rol = r.idrol
-        WHERE idusuario=$iduser");
+    $sql = mysqli_query($connection,"SELECT u.idusuario, u.ape_pate, u.ape_mate, u.nombres, u.correo, u.usuario, u.sexo, u.edad, u.telefono, (u.rol) as idrol, (r.rol) as rol
+                                    FROM usuario u
+                                    INNER JOIN rol r
+                                    on u.rol = r.idrol
+                                    WHERE idusuario=$iduser");
     $result_sql = mysqli_num_rows($sql);
     if ($result_sql == 0) {
         header('Location: lista_usuarios.php');
@@ -83,9 +88,14 @@
         $option= '';
         while ($data = mysqli_fetch_array($sql)) {
             $iduser = $data['idusuario'];
-            $nombre = $data['nombre'];
+            $ape_pate=$data['ape_pate'];
+            $ape_mate=$data['ape_mate'];
+            $nombres = $data['nombres'];
             $correo = $data['correo'];
             $usuario = $data['usuario'];
+            $sexo = $data['sexo'];
+            $edad = $data['edad'];
+            $telefono = $data['telefono'];
             $idrol = $data['idrol'];
             $rol = $data['rol'];
 
@@ -118,7 +128,7 @@
                 <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
 
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"> 
-                    <h2 class="h2">Editar Usuario</h2>
+                    <h2 class="h2">Menu de Usuario</h2>
                     <div class="btn-toolbar mb-2 mb-md-0">
                         <div class="btn-group me-2">
                             <a href="crear_usuario.php" class="btn btn-sm btn-outline-secondary">Crear Usuario</a>
@@ -136,9 +146,17 @@
                                     </div>
                                     <form action="" method="POST">
                                         <div class="form-group">
+                                            <label for="ape_pate">Apellido Paterno </label>
+                                            <input type="text" class="form-control" name="ape_pate" id="ape_pate" aria-describedby="emailHelp" value="<?php echo $ape_pate ?>" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="ape_mate">Apellido Materno</label>
+                                            <input type="text" class="form-control" name="ape_mate" id="ape_mate" aria-describedby="emailHelp" value="<?php echo $ape_mate ?>" required>
+                                        </div>
+                                        <div class="form-group">
                                             <input type="hidden" name="idUsuario" value="<?php echo $iduser; ?>">
-                                            <label for="nombre">Nombre Completo</label>
-                                            <input type="text" class="form-control" name="nombre" id="nombre" aria-describedby="emailHelp" value="<?php echo $nombre ?>" required>
+                                            <label for="nombres">Nombres</label>
+                                            <input type="text" class="form-control" name="nombres" id="nombres" aria-describedby="emailHelp" value="<?php echo $nombres ?>" required>
                                         </div>
                                         <div class="form-group">
                                             <label for="correo">Correo electronico</label>
@@ -162,6 +180,18 @@
                                                 Las contraseñas no coinciden.
                                             </div>
                                         </div>
+                                        <div class="form-group">
+                                                <label for="sexo">Sexo</label>
+                                                <input type="text" class="form-control" name="sexo" id="sexo" aria-describedby="emailHelp" value="<?php echo $sexo ?>" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="edda">Edad</label>
+                                                <input type="text" class="form-control" name="edad" id="edad" aria-describedby="emailHelp" value="<?php echo $edad ?>" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="telefono">Nomero Telefonico</label>
+                                                <input type="text" class="form-control" name="telefono" id="telefono" aria-describedby="emailHelp" value="<?php echo $telefono ?>" required>
+                                            </div>
                                         <div form-group>
                                             <label for="rol">Tipo de Usuario</label>
                                         </div>
